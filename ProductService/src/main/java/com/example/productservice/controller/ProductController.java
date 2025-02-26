@@ -46,4 +46,10 @@ public class ProductController {
         return ok(updatedProduct);
     }
 
+    @DeleteMapping("/delete/{customerNumber}")
+    public ResponseEntity<?> deleteProduct(@PathVariable String customerNumber){
+        productService.deleteProduct(customerNumber);
+        return ok("Product Deleted Successfully");
+    }
+
 }

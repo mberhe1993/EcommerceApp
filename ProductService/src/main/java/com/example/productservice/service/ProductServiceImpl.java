@@ -79,5 +79,15 @@ public class ProductServiceImpl implements ProductService {
         return productMapper.toDto(updatedProduct);
     }
 
+    @Override
+    public void deleteProduct(String customerNumber) {
+        Optional<Product> productOptional = productRepository.findByCustomerNumber(customerNumber);
+        if(productOptional.isEmpty()){
+            log.info("Product Not Found for a customerNumber That you need to delete: {}", customerNumber);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
+        }
+        productRepository.delete(productOptional.get());
+    }
+
 
 }

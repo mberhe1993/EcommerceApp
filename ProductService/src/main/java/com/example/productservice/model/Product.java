@@ -1,6 +1,7 @@
 package com.example.productservice.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -10,6 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "product")
 public class Product {
+    @Id
+    private String id;
     private String customerNumber;
     private String  name;
     private String phone;
@@ -19,6 +22,7 @@ public class Product {
     private String zip;
 
     //getters
+    public String getId(){return id;}
     public String getCustomerNumber(){return customerNumber;}
     public String getName(){return name;}
     public String getPhone(){return phone;}
@@ -28,6 +32,7 @@ public class Product {
     public String getZip(){return zip;}
 
     //setters
+    public void setId(String id){this.id = id;}
     public void setCustomerNumber(String customerNumber){this.customerNumber = customerNumber;}
     public void setName(String name){this.name = name;}
     public void setPhone(String phone){this.phone = phone;}
