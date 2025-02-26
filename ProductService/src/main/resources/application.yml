@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: productservice
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/product
+      username: product
+      password: securepassword
+      authentication-database: product
