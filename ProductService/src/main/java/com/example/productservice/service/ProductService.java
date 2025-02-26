@@ -9,4 +9,6 @@ public interface ProductService {
     ProductDTO getProduct(String customerNumber);
 
     List<ProductDTO> getAllProducts();
+
+    ProductDTO updateProduct(String customerNumber, ProductDTO productDTO);
 }
