@@ -4,11 +4,11 @@ import com.example.productservice.DTO.ProductDTO;
 import com.example.productservice.mapper.ProductMapper;
 import com.example.productservice.model.Product;
 import com.example.productservice.repository.ProductRepository;
+import com.example.productservice.utility.exception.ProductNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
         Optional<Product> productOptional = productRepository.findByCustomerNumber(customerNumber);
         if(productOptional.isEmpty()){
             log.info("Product Not Found for a customerNumber: {}", customerNumber);
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
+                throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
             }
             Product product = productOptional.get();
 
@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = productRepository.findAll();
         if(products.isEmpty()){
             log.info("No Products Found");
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Products Found");
+            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "No Products Found");
         }
         return products.stream()
                 .map(productMapper::toDto)
@@ -65,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
         Optional<Product> productOptional = productRepository.findByCustomerNumber(customerNumber);
         if(productOptional.isEmpty()){
             log.info("Product Not Found for a customerNumber That you need to update: {}", customerNumber);
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
+            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
         }
         Product product = productOptional.get();
         product.setCustomerNumber(productDTO.getCustomerNumber());
@@ -84,10 +84,9 @@ public class ProductServiceImpl implements ProductService {
         Optional<Product> productOptional = productRepository.findByCustomerNumber(customerNumber);
         if(productOptional.isEmpty()){
             log.info("Product Not Found for a customerNumber That you need to delete: {}", customerNumber);
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
+            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a customerNumber: " + customerNumber);
         }
         productRepository.delete(productOptional.get());
     }
-
 
 }
