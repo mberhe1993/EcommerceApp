@@ -8,3 +8,6 @@ spring:
       username: product
       password: securepassword
       authentication-database: product
+
+server:
+  port: 8081

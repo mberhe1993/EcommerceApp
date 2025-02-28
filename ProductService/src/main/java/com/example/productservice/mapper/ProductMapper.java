@@ -14,13 +14,12 @@ public class ProductMapper {
             return null;
         }
          ProductDTO dto = new ProductDTO();
-                dto.setCustomerNumber(product.getCustomerNumber());
+                dto.setproductnumber(product.getproductnumber());
                 dto.setName(product.getName());
-                dto.setPhone(product.getPhone());
-                dto.setEmail(product.getEmail());
-                dto.setStreet(product.getStreet());
-                dto.setCity(product.getCity());
-                dto.setZip(product.getZip());
+                dto.setsupplierPhone(product.getsupplierPhone());
+                dto.setprice(product.getprice());
+                dto.setdescription(product.getdescription());
+                dto.setsupplierName(product.getsupplierName());
                 return dto;
     }
 
@@ -29,13 +28,12 @@ public class ProductMapper {
             return null;
         }
           Product product  = new Product();
-                product.setCustomerNumber(productDTO.getCustomerNumber());
+                product.setproductnumber(productDTO.getproductnumber());
                 product.setName(productDTO.getName());
-                product.setPhone(productDTO.getPhone());
-                product.setEmail(productDTO.getEmail());
-                product.setStreet(productDTO.getStreet());
-                product.setCity(productDTO.getCity());
-                product.setZip(productDTO.getZip());
+                product.setsupplierPhone(productDTO.getsupplierPhone());
+                product.setprice(productDTO.getprice());
+                product.setdescription(productDTO.getdescription());
+                product.setsupplierName(productDTO.getsupplierName());
                 return product;
 
     }
