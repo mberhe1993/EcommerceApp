@@ -23,9 +23,9 @@ public class ProductController {
         return ok(productService.addProduct(productDTO));
     }
 
-    @GetMapping("/{customerNumber}")
-    public ResponseEntity<?> getProduct(@PathVariable String customerNumber){
-        ProductDTO productDTO = productService.getProduct(customerNumber);
+    @GetMapping("/{productnumber}")
+    public ResponseEntity<?> getProduct(@PathVariable String productnumber){
+        ProductDTO productDTO = productService.getProduct(productnumber);
         if(productDTO == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
@@ -37,18 +37,18 @@ public class ProductController {
     }
 
 
-    @PutMapping("/update/{customerNumber}")
-    public ResponseEntity<?> updateProduct(@PathVariable String customerNumber, @RequestBody ProductDTO productDTO){
-        ProductDTO updatedProduct = productService.updateProduct(customerNumber, productDTO);
+    @PutMapping("/update/{productnumber}")
+    public ResponseEntity<?> updateProduct(@PathVariable String productnumber, @RequestBody ProductDTO productDTO){
+        ProductDTO updatedProduct = productService.updateProduct(productnumber, productDTO);
         if(updatedProduct == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return ok(updatedProduct);
     }
 
-    @DeleteMapping("/delete/{customerNumber}")
-    public ResponseEntity<?> deleteProduct(@PathVariable String customerNumber){
-        productService.deleteProduct(customerNumber);
+    @DeleteMapping("/delete/{productnumber}")
+    public ResponseEntity<?> deleteProduct(@PathVariable String productnumber){
+        productService.deleteProduct(productnumber);
         return ok("Product Deleted Successfully");
     }
 

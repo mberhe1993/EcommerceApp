@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
 
 @EqualsAndHashCode
 @Builder(toBuilder = false)
@@ -13,32 +14,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
     @Id
     private String id;
-    private String customerNumber;
-    private String  name;
-    private String phone;
-    private String email;
-    private String street;
-    private String city;
-    private String zip;
+    private String productnumber;
+    private String name;
+    private String supplierPhone;
+    private BigDecimal price;
+    private String description;
+    private String supplierName;
 
     //getters
     public String getId(){return id;}
-    public String getCustomerNumber(){return customerNumber;}
+    public String getproductnumber(){return productnumber;}
     public String getName(){return name;}
-    public String getPhone(){return phone;}
-    public String getEmail(){return email;}
-    public String getStreet(){return street;}
-    public String getCity(){return city;}
-    public String getZip(){return zip;}
+    public String getsupplierPhone(){return supplierPhone;}
+    public BigDecimal getprice(){return price;}
+    public String getdescription(){return description;}
+    public String getsupplierName(){return supplierName;}
 
     //setters
     public void setId(String id){this.id = id;}
-    public void setCustomerNumber(String customerNumber){this.customerNumber = customerNumber;}
+    public void setproductnumber(String productnumber){this.productnumber = productnumber;}
     public void setName(String name){this.name = name;}
-    public void setPhone(String phone){this.phone = phone;}
-    public void setEmail(String email){this.email = email;}
-    public void setStreet(String street){this.street = street;}
-    public void setCity(String city){this.city = city;}
-    public void setZip(String zip){this.zip = zip;}
+    public void setsupplierPhone(String supplierPhone){this.supplierPhone = supplierPhone;}
+    public void setprice(BigDecimal price){this.price = price;}
+    public void setdescription(String description){this.description = description;}
+    public void setsupplierName(String supplierName){this.supplierName = supplierName;}
 
 }
