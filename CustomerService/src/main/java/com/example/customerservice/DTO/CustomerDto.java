@@ -1,6 +1,6 @@
 package com.example.customerservice.DTO;
 
-public class CustomerDTO {
+public class CustomerDto {
     private String id;
     private String customerNumber;
     private String name;
@@ -10,10 +10,10 @@ public class CustomerDTO {
     private String city;
     private String zip;
 
-    public CustomerDTO() {
+    public CustomerDto() {
     }
 
-    public CustomerDTO(String id, String customerNumber, String name, String email, String phoneNumber, String street, String city, String zip) {
+    public CustomerDto(String id, String customerNumber, String name, String email, String phoneNumber, String street, String city, String zip) {
         this.id = id;
         this.customerNumber = customerNumber;
         this.name = name;

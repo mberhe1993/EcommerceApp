@@ -37,7 +37,7 @@ public class Customer {
         return email;
     }
 
-    public String getPhone() {
+    public String getPhoneNumber() {
         return phone;
     }
 
