@@ -3,41 +3,20 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-<<<<<<< HEAD
-      <profile name="Annotation profile for productservice" enabled="true">
-=======
-      <profile name="Annotation profile for OrderCommandService" enabled="true">
->>>>>>> 91af6c5eb8d6b2a7924ba9089d64670f028c0f9e
+      <profile name="Annotation profile for CustomerService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-<<<<<<< HEAD
         <module name="CustomerService" />
-        <module name="OrderService" />
-        <module name="ProductService" />
-        <module name="productservice" />
-=======
-        <module name="OrdersCommandService" />
-        <module name="ProductService" />
-        <module name="OrdersQueryService" />
->>>>>>> 91af6c5eb8d6b2a7924ba9089d64670f028c0f9e
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-<<<<<<< HEAD
       <module name="CustomerService" options="-parameters" />
-      <module name="OrderService" options="-parameters" />
-=======
-      <module name="OrdersCommandService" options="-parameters" />
-      <module name="OrdersQueryService" options="-parameters" />
->>>>>>> 91af6c5eb8d6b2a7924ba9089d64670f028c0f9e
-      <module name="ProductService" options="-parameters" />
-      <module name="productservice" options="-parameters" />
     </option>
   </component>
 </project>
