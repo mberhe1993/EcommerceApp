@@ -1,0 +1,13 @@
+package org.learn.orderservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class OrdersQueryServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(OrdersQueryServiceApplication.class, args);
+    }
+
+}

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ORDERSQUERYSERVICE
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ordersread
+      username: ordersread
+      password: securepassword
+      authentication-database: ordersread
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: orders-query-service
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+
+server:
+  port: 8083
