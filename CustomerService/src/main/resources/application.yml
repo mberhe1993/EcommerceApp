@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: CustomerService
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/customer
+      username: customer
+      password: customerpassword
+      authentication-database: customer
+
+server:
+  port: 8080
