@@ -3,16 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for OrderCommandService" enabled="true">
+      <profile name="Annotation profile for CustomerService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="OrdersCommandService" />
-        <module name="ProductService" />
-        <module name="OrdersQueryService" />
+        <module name="CustomerService" />
       </profile>
       <profile name="Annotation profile for productservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -35,6 +33,7 @@
       <module name="OrdersQueryService" options="-parameters" />
       <module name="ProductService" options="-parameters" />
       <module name="productservice" options="-parameters" />
+      <module name="CustomerService" options="-parameters" />
     </option>
   </component>
 </project>
