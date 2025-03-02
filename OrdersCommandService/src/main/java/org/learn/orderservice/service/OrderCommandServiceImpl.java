@@ -1,5 +1,7 @@
 package org.learn.orderservice.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.learn.orderservice.DTO.OrderCommandDTO;
 import org.learn.orderservice.model.OrderCommand;
 import org.learn.orderservice.orderMapper.OrderCommandMapper;
@@ -14,9 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class OrderCommandServiceImpl implements OrderCommandService {
 
-    private static final Logger log = LoggerFactory.getLogger(OrderCommandServiceImpl.class);
     @Autowired
     private OrderCommandRepository orderCommandRepository;
 

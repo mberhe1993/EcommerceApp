@@ -1,7 +1,5 @@
 package org.learn.orderservice.service;
 
-
-
 import org.learn.orderservice.DTO.OrderQueryDTO;
 import org.learn.orderservice.model.OrderQuery;
 import org.learn.orderservice.orderMapper.OrderQueryMapper;
@@ -23,7 +21,6 @@ public class OrderQueryServiceImpl implements OrderQueryService {
 
     @Autowired
    private OrderQueryMapper OrderQueryMapper;;
-
 
 
     @Override

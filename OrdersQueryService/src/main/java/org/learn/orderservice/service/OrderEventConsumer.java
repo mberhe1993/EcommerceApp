@@ -16,7 +16,7 @@ public class OrderEventConsumer {
     @KafkaListener(topics = "order-events", groupId = "order-query-group")
     public void consumeOrderEvent(OrderQuery order) {
         System.out.println("Received order event: " + order.getOrderNumber());
-        orderQueryRepository.save(order);  // ✅ Syncing read database
+        orderQueryRepository.save(order);
     }
 
 }

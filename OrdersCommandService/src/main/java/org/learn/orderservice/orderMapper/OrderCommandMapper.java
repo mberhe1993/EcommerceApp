@@ -1,24 +1,28 @@
 package org.learn.orderservice.orderMapper;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.learn.orderservice.DTO.OrderCommandDTO;
 import org.learn.orderservice.model.OrderCommand;
 import org.springframework.stereotype.Component;
 
 @Component
+@Getter
+@Setter
 public class OrderCommandMapper {
 
     public OrderCommandDTO toOrderCommandDTO(OrderCommand orderCommand){
         if(orderCommand == null){
             return null;
         }
-        OrderCommandDTO orderCommandDTO = new OrderCommandDTO();
-        orderCommandDTO.setOrderNumber(orderCommand.getOrderNumber());
-        orderCommandDTO.setDate(orderCommand.getDate());
-        orderCommandDTO.setTotalPrice(orderCommand.getTotalPrice());
-        orderCommandDTO.setProduct(orderCommand.getProduct());
-        orderCommandDTO.setCustomerNumber(orderCommand.getCustomerNumber());
-        orderCommandDTO.setCustomerName(orderCommand.getCustomerName());
-        return orderCommandDTO;
+        return OrderCommandDTO.builder()
+                        .orderNumber(orderCommand.getOrderNumber())
+                        .date(orderCommand.getDate())
+                        .totalPrice(orderCommand.getTotalPrice())
+                        .product(orderCommand.getProduct())
+                        .customerNumber(orderCommand.getCustomerNumber())
+                        .customerName(orderCommand.getCustomerName())
+                        .build();
 
     }
 
@@ -26,14 +30,14 @@ public class OrderCommandMapper {
         if(orderCommandDTO == null){
             return null;
         }
-        OrderCommand orderCommand = new OrderCommand();
-        orderCommand.setOrderNumber(orderCommandDTO.getOrderNumber());
-        orderCommand.setDate(orderCommandDTO.getDate());
-        orderCommand.setTotalPrice(orderCommandDTO.getTotalPrice());
-        orderCommand.setProduct(orderCommandDTO.getProduct());
-        orderCommand.setCustomerNumber(orderCommandDTO.getCustomerNumber());
-        orderCommand.setCustomerName(orderCommandDTO.getCustomerName());
-        return orderCommand;
+       return OrderCommand.builder()
+                .orderNumber(orderCommandDTO.getOrderNumber())
+                .date(orderCommandDTO.getDate())
+                .totalPrice(orderCommandDTO.getTotalPrice())
+                .product(orderCommandDTO.getProduct())
+                .customerNumber(orderCommandDTO.getCustomerNumber())
+                .customerName(orderCommandDTO.getCustomerName())
+                .build();
     }
 
 }

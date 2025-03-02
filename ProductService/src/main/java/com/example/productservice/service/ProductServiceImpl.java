@@ -35,11 +35,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO getProduct(String productnumber) {
-        Optional<Product> productOptional = productRepository.findByproductnumber(productnumber);
+    public ProductDTO getProduct(String productNumber) {
+        Optional<Product> productOptional = productRepository.findByproductNumber(productNumber);
         if(productOptional.isEmpty()){
-            log.info("Product Not Found for a productnumber: {}", productnumber);
-                throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productnumber: " + productnumber);
+            log.info("Product Not Found for a productNumber: {}", productNumber);
+                throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productNumber: " + productNumber);
             }
             Product product = productOptional.get();
 
@@ -61,29 +61,30 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO updateProduct(String productnumber, ProductDTO productDTO) {
-        Optional<Product> productOptional = productRepository.findByproductnumber(productnumber);
+    public ProductDTO updateProduct(String productNumber, ProductDTO productDTO) {
+        Optional<Product> productOptional = productRepository.findByproductNumber(productNumber);
         if(productOptional.isEmpty()){
-            log.info("Product Not Found for a productnumber That you need to update: {}", productnumber);
-            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productnumber: " + productnumber);
+            log.info("Product Not Found for a productNumber That you need to update: {}", productNumber);
+            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productNumber: " + productNumber);
         }
         Product product = productOptional.get();
-        product.setproductnumber(productDTO.getproductnumber());
+        product.setProductNumber(productDTO.getProductNumber());
         product.setName(productDTO.getName());
-        product.setsupplierPhone(productDTO.getsupplierPhone());
-        product.setprice(productDTO.getprice());
-        product.setdescription(productDTO.getdescription());
-        product.setsupplierName(productDTO.getsupplierName());
+        product.setSupplierName(productDTO.getSupplierName());
+        product.setPrice(productDTO.getPrice());
+        product.setDescription(productDTO.getDescription());
+        product.setSupplierName(productDTO.getSupplierName());
+        product.setSupplierPhone(productDTO.getSupplierPhone());
         Product updatedProduct = productRepository.save(product);
         return productMapper.toDto(updatedProduct);
     }
 
     @Override
-    public void deleteProduct(String productnumber) {
-        Optional<Product> productOptional = productRepository.findByproductnumber(productnumber);
+    public void deleteProduct(String productNumber) {
+        Optional<Product> productOptional = productRepository.findByproductNumber(productNumber);
         if(productOptional.isEmpty()){
-            log.info("Product Not Found for a productnumber That you need to delete: {}", productnumber);
-            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productnumber: " + productnumber);
+            log.info("Product Not Found for a productNumber That you need to delete: {}", productNumber);
+            throw new ProductNotFoundException(HttpStatus.NOT_FOUND, "Product Not Found for a productNumber: " + productNumber);
         }
         productRepository.delete(productOptional.get());
     }

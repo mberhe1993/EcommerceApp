@@ -14,13 +14,27 @@
         <module name="ProductService" />
         <module name="OrdersQueryService" />
       </profile>
+      <profile name="Annotation profile for productservice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="OrdersCommandService (2)" />
+        <module name="OrdersCommandService (1)" />
+        <module name="productservice" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="OrdersCommandService" options="-parameters" />
+      <module name="OrdersCommandService (1)" options="-parameters" />
+      <module name="OrdersCommandService (2)" options="-parameters" />
       <module name="OrdersQueryService" options="-parameters" />
       <module name="ProductService" options="-parameters" />
+      <module name="productservice" options="-parameters" />
     </option>
   </component>
 </project>

@@ -6,11 +6,11 @@ import java.util.List;
 public interface ProductService {
     ProductDTO addProduct(ProductDTO productDTO);
 
-    ProductDTO getProduct(String productnumber);
+    ProductDTO getProduct(String productNumber);
 
     List<ProductDTO> getAllProducts();
 
-    ProductDTO updateProduct(String productnumber, ProductDTO productDTO);
+    ProductDTO updateProduct(String productNumber, ProductDTO productDTO);
 
-    void deleteProduct(String productnumber);
+    void deleteProduct(String productNumber);
 }

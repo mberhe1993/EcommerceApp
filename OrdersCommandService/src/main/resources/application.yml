@@ -6,7 +6,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/orders
       username: orders
-      password: securepassword
+      password: secure-password
       authentication-database: orders
 
     kafka:

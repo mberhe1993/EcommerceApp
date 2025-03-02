@@ -1,25 +1,27 @@
 package org.learn.orderservice.orderMapper;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.learn.orderservice.DTO.OrderQueryDTO;
 import org.learn.orderservice.model.OrderQuery;
 import org.springframework.stereotype.Component;
 
 @Component
+@Getter
+@Setter
 public class OrderQueryMapper {
 
     public OrderQueryDTO toOrderQueryDTO(OrderQuery orderQuery){
         if(orderQuery == null){
             return null;
         }
-        OrderQueryDTO orderQueryDTO = new OrderQueryDTO();
-        orderQueryDTO.setCustomerName(orderQuery.getCustomerName());
-        orderQueryDTO.setDate(orderQuery.getDate());
-        orderQueryDTO.setTotalPrice(orderQuery.getTotalPrice());
-        orderQueryDTO.setOrderNumber(orderQuery.getOrderNumber());
-        orderQueryDTO.setProducts(orderQuery.getProducts());
-        orderQueryDTO.setCustomerName(orderQuery.getCustomerName());
-
-        return orderQueryDTO;
+       return OrderQueryDTO.builder()
+                .orderNumber(orderQuery.getOrderNumber())
+                .date(orderQuery.getDate())
+                .totalPrice(orderQuery.getTotalPrice())
+                .products(orderQuery.getProducts())
+                .customerName(orderQuery.getCustomerName())
+                .build();
 
     }
 
@@ -27,14 +29,13 @@ public class OrderQueryMapper {
         if(orderQueryDTO == null){
             return null;
         }
-        OrderQuery orderCommand = new OrderQuery();
-        orderCommand.setOrderNumber(orderQueryDTO.getOrderNumber());
-        orderCommand.setDate(orderQueryDTO.getDate());
-        orderCommand.setTotalPrice(orderQueryDTO.getTotalPrice());
-        orderCommand.setOrderNumber(orderQueryDTO.getOrderNumber());
-        orderCommand.setProducts(orderQueryDTO.getProducts());
-        orderCommand.setCustomerName(orderQueryDTO.getCustomerName());
-        return orderCommand;
+       return OrderQuery.builder()
+                .orderNumber(orderQueryDTO.getOrderNumber())
+                .date(orderQueryDTO.getDate())
+                .totalPrice(orderQueryDTO.getTotalPrice())
+                .products(orderQueryDTO.getProducts())
+                .customerName(orderQueryDTO.getCustomerName())
+                .build();
     }
 
 }
