@@ -1,4 +1,4 @@
-package org.learn.orderservice.model;
+package org.learn.orderservice.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +15,6 @@ public class OrderItem {
     private String productNumber;
     private String productName;
     private int quantity;
-    private BigDecimal price;
+    private Double price;
 
 }

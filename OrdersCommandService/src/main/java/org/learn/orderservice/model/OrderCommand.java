@@ -1,6 +1,7 @@
 package org.learn.orderservice.model;
 
 import lombok.*;
+import org.learn.orderservice.DTO.OrderItem;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
@@ -18,9 +19,10 @@ public class OrderCommand {
 
     private String orderNumber;
     private LocalDate date;
-    private BigDecimal totalPrice;
+    private Double totalPrice;
     private List<OrderItem> product;
     private String customerNumber;
     private String customerName;
+    private String paymentNumber;
 
 }

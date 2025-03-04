@@ -20,7 +20,7 @@ public class Product {
     private String productNumber;
     private String name;
     private String supplierPhone;
-    private BigDecimal price;
+    private Double price;
     private String description;
     private String supplierName;
 

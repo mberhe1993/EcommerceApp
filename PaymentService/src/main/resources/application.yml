@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: PAYMENTSERVICE
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/payments
+      username: payment
+      password: securepassword
+      authentication-database: payment
+
+server:
+  port: 8083
