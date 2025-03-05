@@ -3,18 +3,24 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for PaymentService" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="discoveryserver" />
+      </profile>
+      <profile name="Annotation profile for CustomerService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
-        <module name="OrdersCommandService" />
-        <module name="OrdersCommandService (1)" />
+        <module name="CustomerService" />
         <module name="PaymentService" />
+        <module name="productservice" />
       </profile>
-      <profile name="Annotation profile for productservice" enabled="true">
+      <profile name="Annotation profile for OrdersQueryService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -23,20 +29,24 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="OrdersCommandService (2)" />
-        <module name="CustomerService" />
-        <module name="productservice" />
+        <module name="OrdersQueryService" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="discover" target="17" />
+      <module name="OrdersCommandService" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CustomerService" options="-parameters" />
       <module name="OrdersCommandService" options="-parameters" />
-      <module name="OrdersCommandService (1)" options="-parameters" />
       <module name="OrdersCommandService (2)" options="-parameters" />
       <module name="OrdersQueryService" options="-parameters" />
       <module name="PaymentService" options="-parameters" />
       <module name="ProductService" options="-parameters" />
+      <module name="discover" options="-parameters" />
+      <module name="discoveryserver" options="-parameters" />
       <module name="productservice" options="-parameters" />
     </option>
   </component>

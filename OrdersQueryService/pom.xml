@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.learn</groupId>
-    <artifactId>OrdersCommandService</artifactId>
+    <artifactId>OrdersQueryService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>OrderCommandService</name>
-    <description>OrderCommandService</description>
+    <name>OrdersQueryService</name>
+    <description>OrdersQueryService</description>
     <url/>
     <licenses>
         <license/>
@@ -47,6 +47,11 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>4.2.0</version>
         </dependency>
 
         <dependency>
