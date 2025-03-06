@@ -8,8 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="discoveryserver" />
+        <module name="Gateway" />
       </profile>
-      <profile name="Annotation profile for CustomerService" enabled="true">
+      <profile name="Annotation profile for productservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,29 +18,22 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="CustomerService" />
+        <module name="OrdersCommandService" />
+        <module name="OrdersCommandService (2)" />
         <module name="PaymentService" />
         <module name="productservice" />
-      </profile>
-      <profile name="Annotation profile for OrdersQueryService" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="OrdersCommandService (2)" />
         <module name="OrdersQueryService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="discover" target="17" />
-      <module name="OrdersCommandService" target="17" />
+      <module name="discoveryserver (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CustomerService" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
       <module name="OrdersCommandService" options="-parameters" />
       <module name="OrdersCommandService (2)" options="-parameters" />
       <module name="OrdersQueryService" options="-parameters" />
@@ -47,6 +41,7 @@
       <module name="ProductService" options="-parameters" />
       <module name="discover" options="-parameters" />
       <module name="discoveryserver" options="-parameters" />
+      <module name="discoveryserver (1)" options="-parameters" />
       <module name="productservice" options="-parameters" />
     </option>
   </component>
